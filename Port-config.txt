@@ -1,0 +1,16 @@
+# standard interface - 1500 + 14 = 1514 MTU
+interface TenGigE0/0/2/1
+ mtu 1514
+!
+
+# dot1q interface - 1500 + 14 + 4 (VLAN tag) = 1518 MTU
+interface Bundle-Ether1.252
+ mtu 1518
+ encapsulation dot1q 252
+!
+ 
+# qinq interface - 1500 + 14 + 4 + 4 (2x VLAN tags) = 1522 MTU
+interface Bundle-Ether1.1200
+ mtu 1522
+ encapsulation dot1q 1200 second-dot1q 1200
+!
